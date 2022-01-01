@@ -393,6 +393,12 @@ class GoogleMapsPlaces extends GoogleWebService {
     bool strictbounds = false,
     String? region,
   }) {
+
+    print('=================================================');
+    print('=================================================');
+    print('=================================================');
+    print('=================================================');
+
     final params = <String, String>{
       'input': input,
     };
@@ -440,6 +446,18 @@ class GoogleMapsPlaces extends GoogleWebService {
     if (sessionToken != null) {
       params['sessiontoken'] = sessionToken;
     }
+
+    print('|||||||||||||||||||||||||||||||||||||||||||||||||||||||||');
+
+
+    print(url);
+
+    print(url
+        .replace(
+          path: '${url.path}$_autocompleteUrl',
+          queryParameters: params,
+        )
+        .toString());
 
     return url
         .replace(
